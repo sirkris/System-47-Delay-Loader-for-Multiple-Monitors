@@ -1,0 +1,34 @@
+System 47 Delay Loader for Multiple Monitors
+Written by Kris Craig.  09.14.2011.
+
+INSTALLATION
+-------------
+
+1. You should be using UltraMon, DisplayFusion, or some other application that allows different screensavers on each monitor.  
+Otherwise, there's really no point to this, is there?
+
+	->I personally recommend UltraMon.  It's cheap, but if you don't want to pay for it, you can get it easily on 
+	the Pirate Bay.
+
+2. If you haven't already, download and install System 47.  It's on the Google.
+
+3. Locate the loader screensaver file at:  (loader path)\System47_MultiMon\bin\Release\System47_MultiMon.scr
+
+4. Copy that file to the appropriate Windows system directory:
+
+	->For 32-bit systems:  %systemroot%\System32
+	->For 64-bit systems:  %systemroot%\SysWOW64
+
+5. Open your UltraMon (or whatever multi-monitor management utility you're using) and configure the screensaver settings.
+
+6. For each monitor you want this on (I'm assuming it's at least 2), select "System47_MultiMon".
+
+	->If an empty command-prompt window opens when you do this, just close it (otherwise the screensaver will activate 
+	and send you to the locked desktop screen afterwards).  This is a bug caused by the fact that I just created a 
+	basic .exe file and renamed it to .scr.  When I get time later, I'll add some code to make it standards-compliant.  
+	But for now, it'll at least do what you want it to do.  =)
+
+7. If you'd like to contribute to the project, or just find the latest version, go to the project's Github page at:
+https://github.com/sirkris/System-47-Delay-Loader-for-Multiple-Monitors
+
+	->Thanks!
