@@ -46,10 +46,25 @@ namespace System47_MultiMon
         [DllImport("user32.dll", EntryPoint = "LockWorkStation")]
         private static extern IntPtr LockWorkStation();
 
+        [DllImport("shell32.dll")]
+        public static extern bool SHGetSpecialFolderPath(IntPtr hwndOwner, [Out]StringBuilder lpszPath, int nFolder, bool fCreate);
+
+        public static string GetSystemDirectory()
+        {
+            StringBuilder path = new StringBuilder(260);
+            SHGetSpecialFolderPath(IntPtr.Zero, path, 0x0029, false);
+            return path.ToString();
+        }
+
         public static void runScreenSaver()
         {
+            string System47 = GetSystemDirectory() + "\\System47.scr";
             Delay.wait(1, 10);
-            Process.Start("System47.scr /s");
+            //Console.WriteLine("DEBUG - " + System47);
+            ProcessStartInfo procInfo = new ProcessStartInfo();
+            procInfo.FileName = System47;
+            Process proc = Process.Start(procInfo);
+            proc.WaitForExit();
             LockWorkStation();
         }
 
